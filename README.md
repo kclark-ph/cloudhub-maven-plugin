@@ -8,9 +8,9 @@ Maven plugin for deploying Mule applications to CloudHub.
 
 ```xml
 <plugin>
-    <groupId>com.mulesoft.muleesb</groupId>
-    <artifactId>cloudhub-maven-plugin</artifactId>
-    <version>1.0</version>
+	<groupId>org.mule.tools.maven</groupId>
+	<artifactId>cloudhub-maven-plugin</artifactId>
+	<version>1.0</version>
     <configuration>
         <muleVersion>3.6.0</muleVersion>
         <application>/path/to/app1.zip</application>
@@ -33,9 +33,9 @@ For this to work your project must generate a valid Mule application. You can do
 
 ```xml
 <plugin>
-    <groupId>com.mulesoft.muleesb</groupId>
-    <artifactId>cloudhub-maven-plugin</artifactId>
-    <version>1.0</version>
+	<groupId>org.mule.tools.maven</groupId>
+	<artifactId>cloudhub-maven-plugin</artifactId>
+	<version>1.0</version>
     <configuration>
         <muleVersion>3.6.0</muleVersion>
     </configuration>
@@ -57,11 +57,11 @@ This configuration will deploy your application to CloudHub, run your integratio
 
 ```xml
 <plugin>
-	<groupId>@project.groupId@</groupId>
-	<artifactId>@project.artifactId@</artifactId>
-	<version>@project.version@</version>
+	<groupId>org.mule.tools.maven</groupId>
+	<artifactId>cloudhub-maven-plugin</artifactId>
+	<version>1.0</version>
     <configuration>
-		<muleVersion>3.5.0</muleVersion>
+		<muleVersion>3.6.0</muleVersion>
     </configuration>
 	<executions>
         <execution>
