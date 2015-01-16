@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mulesoft.cloudhub</groupId>
     <artifactId>cloudhub-maven-plugin</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>maven-plugin</packaging>
     <name>CloudHub Maven Plugin</name>
     <url>http://github.com/mulesoft/cloudhub-maven-plugin</url>
