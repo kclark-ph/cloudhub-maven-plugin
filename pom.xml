@@ -49,6 +49,7 @@
         <maven.plugin.annotations.version>3.2</maven.plugin.annotations.version>
         <plexus.utils.version>3.0.8</plexus.utils.version>
         <junit.version>4.10</junit.version>
+        <maven.gpg.plugin.version>1.5</maven.gpg.plugin.version>
         <mockito.version>1.9.5</mockito.version>
         <maven.dependency.plugin.version>2.8</maven.dependency.plugin.version>
         <failsafe.plugin.version>2.18.1</failsafe.plugin.version>
@@ -70,6 +71,7 @@
         <maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>
         <cloudhub.uri>https://cloudhub.io</cloudhub.uri>
         <cloudhub.domain>testCloudhubPlugin${maven.build.timestamp}</cloudhub.domain>
+        <gpg.skip>true</gpg.skip>
     </properties>
     <dependencies>
         <!-- Maven Plugin Dependencies -->
@@ -201,6 +203,23 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>${maven.gpg.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <skip>${gpg.skip}</skip>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
