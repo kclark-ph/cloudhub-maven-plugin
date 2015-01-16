@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.mulesoft.muleesb.it</groupId>
+	<artifactId>undeploy</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>mule</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.mule.tools</groupId>
+				<artifactId>maven-mule-plugin</artifactId>
+				<version>1.7</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>@project.groupId@</groupId>
+				<artifactId>@project.artifactId@</artifactId>
+				<version>@project.version@</version>
+                <configuration>
+					<muleVersion>3.5.0</muleVersion>
+                </configuration>
+				<executions>
+                    <execution>
+                        <id>deploy</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+					<execution>
+						<id>undeploy</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>undeploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
